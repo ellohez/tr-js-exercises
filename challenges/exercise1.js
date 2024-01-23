@@ -28,5 +28,10 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
-	// Your code here!
+	// Test if 2nd character is a letter or a number.
+	const noExtraLetters = !Number.isNaN(parseInt(person.address.postCode[1]));
+	// Return true if the postcode starts with only one letter at the start === 'M'
+	let isMPostCode = ((person.address.postCode[0].toLowerCase() === 'm') && (noExtraLetters))
+	
+	return isMPostCode;
 }
