@@ -2,7 +2,7 @@ export function getSquares(nums) {
 	if (nums === undefined) throw new Error('nums is required');
 	if(nums.length === 0) {
 		return nums;
-	}
+	};
 
 	return nums.map(x => x ** 2);
 }
@@ -17,7 +17,7 @@ export function camelCaseWords(words) {
 	for(let i = 1; i <  words.length; i++) {
 		const capsWord = (words[i][0].toUpperCase() + words[i].substring(1));
 		camelCaseString += capsWord; 
-	}
+	};
 
 	return camelCaseString;
 }
@@ -30,8 +30,8 @@ export function getTotalSubjects(people) {
 	for(let person of people) {
 		for(let i = 0; i < person.subjects.length; i++) {
 			++subjectCount;
-		}
-	}
+		};
+	};
 
 	return subjectCount;
 }
@@ -39,7 +39,15 @@ export function getTotalSubjects(people) {
 export function checkIngredients(menu, ingredient) {
 	if (menu === undefined) throw new Error('menu is required');
 	if (!ingredient) throw new Error('ingredient is required');
-	// Your code here!
+	// Return as soon as we find the ingredient listed
+	for(let item of menu) {
+		if(item.ingredients.findIndex(x => x === ingredient) !== -1) {
+			return true;
+		}
+	};
+
+	// Return false if not found in any menu items
+	return false;
 }
 
 export function duplicateNumbers(arr1, arr2) {
