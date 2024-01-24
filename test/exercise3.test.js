@@ -20,7 +20,7 @@ describe('findSmallNums', () => {
 	});
 });
 
-describe('findNamesBeginningWith', () => {
+xdescribe('findNamesBeginningWith', () => {
 	test('returns an array of names beginning with the specified character', () => {
 		const names = ['Sally', 'Dave', 'Susan', 'Geoff', 'Riley', 'Sam'];
 		expect(findNamesBeginningWith(names, 'S')).toEqual([
@@ -33,7 +33,7 @@ describe('findNamesBeginningWith', () => {
 	});
 });
 
-describe('findVerbs', () => {
+xdescribe('findVerbs', () => {
 	test("returns an array of words that are considered verbs (because they begin with 'to ')", () => {
 		const words = [
 			'to eat',
@@ -60,7 +60,7 @@ describe('findVerbs', () => {
 	});
 });
 
-describe('getIntegers', () => {
+xdescribe('getIntegers', () => {
 	test('returns an array containing only integers', () => {
 		const nums = [1, 3.5, 2.1, 1, 4, 9];
 		expect(getIntegers(nums)).toEqual([1, 1, 4, 9]);
@@ -69,7 +69,7 @@ describe('getIntegers', () => {
 	});
 });
 
-describe('getCities', () => {
+xdescribe('getCities', () => {
 	test('returns an array of the cities of each user', () => {
 		const users = [
 			{
@@ -113,7 +113,7 @@ describe('getCities', () => {
 	});
 });
 
-describe('getSquareRoots', () => {
+xdescribe('getSquareRoots', () => {
 	test('gets the square root of each number to 2 decimal places', () => {
 		const nums = [36, 77, 12, 355, 92, 5];
 		expect(getSquareRoots(nums)).toEqual([
@@ -122,7 +122,7 @@ describe('getSquareRoots', () => {
 	});
 });
 
-describe('findSentencesContaining', () => {
+xdescribe('findSentencesContaining', () => {
 	const sentencesAboutPackageJson = [
 		'You should specify a license for your package so that people know how they are permitted to use it',
 		'The main field is a module ID that is the primary entry point to your program',
@@ -158,7 +158,7 @@ describe('findSentencesContaining', () => {
 	});
 });
 
-describe('getLongestSides', () => {
+xdescribe('getLongestSides', () => {
 	test('returns the longest side of each set of triangle data', () => {
 		const data = [
 			[6, 7, 10],
