@@ -5,8 +5,8 @@ export function findSmallNums(nums) {
 	for(let i = 0; i < nums.length; i++) {
 		if(nums[i] < 1) {
 			smallNumsArr.push(nums[i]);
-		}
-	}
+		};
+	};
 
 	return smallNumsArr;
 }
@@ -19,15 +19,24 @@ export function findNamesBeginningWith(names, char) {
 	for(let i = 0; i < names.length; i++) {
 		if(names[i][0] === char) {
 			foundNames.push(names[i]);
-		}
-	}
+		};
+	};
 
 	return foundNames;
 }
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
-	// Your code here
+
+	const foundVerbs = [];
+	for(let i = 0; i < words.length; i++) {
+
+		if(words[i].startsWith('to ')) {
+			foundVerbs.push(words[i]);
+		};
+	};
+
+	return foundVerbs;
 }
 
 export function getIntegers(nums) {
