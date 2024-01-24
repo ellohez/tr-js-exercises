@@ -3,9 +3,8 @@ export function getSquares(nums) {
 	if(nums.length === 0) {
 		return nums;
 	}
-	const squareNums = nums.map(x => x ** 2);
 
-	return squareNums;
+	return nums.map(x => x ** 2);
 }
 
 export function camelCaseWords(words) {
