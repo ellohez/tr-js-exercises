@@ -41,7 +41,7 @@ export function checkIngredients(menu, ingredient) {
 	if (!ingredient) throw new Error('ingredient is required');
 	// Return as soon as we find the ingredient listed
 	for(let item of menu) {
-		if(item.ingredients.findIndex(x => x === ingredient) !== -1) {
+		if(item.ingredients.includes(ingredient)) {
 			return true;
 		}
 	};
