@@ -1,6 +1,11 @@
 export function getSquares(nums) {
 	if (nums === undefined) throw new Error('nums is required');
-	// Your code here!
+	if(nums.length === 0) {
+		return nums;
+	}
+	const squareNums = nums.map(x => x ** 2);
+
+	return squareNums;
 }
 
 export function camelCaseWords(words) {
