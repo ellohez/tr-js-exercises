@@ -39,9 +39,7 @@ export function getCities(users) {
 	if (!users) throw new Error('users is required');
 	
 	const cityArray = [];
-	for(let i = 0; i < users.length; i++) {
-		cityArray.push(users[i].data.city.displayName);
-	};
+	users.forEach(user => { cityArray.push(user.data.city.displayName) });
 
 	return cityArray;
 };
@@ -50,11 +48,15 @@ export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
 	
 	const squareRoots = [];
-	for(let i = 0; i < nums.length; i++) {
-		let square = Math.sqrt(nums[i]);
+	// Although this could be done as follows on one line, 
+	// for readability reasons, I have used a longer version. 
+	// nums.forEach(num => { squareRoots.push(Math.round(Math.sqrt(num) * 100) / 100) })
+
+	nums.forEach(function (num) { 
+		let square = Math.sqrt(num);
 		square = Math.round(square * 100) / 100;
 		squareRoots.push(square);
-	};
+	});
 
 	return squareRoots;
 };
