@@ -66,11 +66,8 @@ export function findSentencesContaining(sentences, str) {
 	if (!str) throw new Error('str is required');
 	
 	const resultSentences = [];
-	for(let i = 0; i < sentences.length; i++) {
-		if(sentences[i].toLowerCase().indexOf(str) !== -1) {
-			resultSentences.push(sentences[i]);
-		};
-	};
+	// Case insensitive search for the str in the current sentence
+	sentences.forEach(sentence => { sentence.toLowerCase().indexOf(str) !== -1 ? resultSentences.push(sentence) : resultSentences})
 	
 	return resultSentences;
 };
