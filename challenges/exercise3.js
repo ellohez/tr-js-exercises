@@ -9,7 +9,7 @@ export function findSmallNums(nums) {
 	};
 
 	return smallNumsArr;
-}
+};
 
 export function findNamesBeginningWith(names, char) {
 	if (!names) throw new Error('names is required');
@@ -23,7 +23,7 @@ export function findNamesBeginningWith(names, char) {
 	};
 
 	return foundNames;
-}
+};
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
@@ -37,7 +37,7 @@ export function findVerbs(words) {
 	};
 
 	return foundVerbs;
-}
+};
 
 export function getIntegers(nums) {
 	if (!nums) throw new Error('nums is required');
@@ -50,7 +50,7 @@ export function getIntegers(nums) {
 	};
 
 	return integers;
-}
+};
 
 export function getCities(users) {
 	if (!users) throw new Error('users is required');
@@ -61,20 +61,28 @@ export function getCities(users) {
 	};
 
 	return cityArray;
-}
+};
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
-	// Your code here
-}
+	
+	const squareRoots = [];
+	for(let i = 0; i < nums.length; i++) {
+		let square = Math.sqrt(nums[i]);
+		square = Math.round(square * 100) / 100;
+		squareRoots.push(square);
+	};
+
+	return squareRoots;
+};
 
 export function findSentencesContaining(sentences, str) {
 	if (!sentences) throw new Error('sentences is required');
 	if (!str) throw new Error('str is required');
-	// Your code here
-}
+	// Your code here!
+};
 
 export function getLongestSides(triangles) {
 	if (!triangles) throw new Error('triangles is required');
-	// Your code here
-}
+	// Your code here!
+};

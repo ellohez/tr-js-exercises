@@ -113,7 +113,7 @@ describe('getCities', () => {
 	});
 });
 
-xdescribe('getSquareRoots', () => {
+describe('getSquareRoots', () => {
 	test('gets the square root of each number to 2 decimal places', () => {
 		const nums = [36, 77, 12, 355, 92, 5];
 		expect(getSquareRoots(nums)).toEqual([
@@ -122,7 +122,7 @@ xdescribe('getSquareRoots', () => {
 	});
 });
 
-xdescribe('findSentencesContaining', () => {
+describe('findSentencesContaining', () => {
 	const sentencesAboutPackageJson = [
 		'You should specify a license for your package so that people know how they are permitted to use it',
 		'The main field is a module ID that is the primary entry point to your program',
@@ -158,7 +158,7 @@ xdescribe('findSentencesContaining', () => {
 	});
 });
 
-xdescribe('getLongestSides', () => {
+describe('getLongestSides', () => {
 	test('returns the longest side of each set of triangle data', () => {
 		const data = [
 			[6, 7, 10],
