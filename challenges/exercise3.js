@@ -21,12 +21,7 @@ export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
 
 	const foundVerbs = [];
-	for(let i = 0; i < words.length; i++) {
-
-		if(words[i].startsWith('to ')) {
-			foundVerbs.push(words[i]);
-		};
-	};
+	words.forEach(word => { word.startsWith('to ') ? foundVerbs.push(word) : foundVerbs});
 
 	return foundVerbs;
 };
