@@ -30,11 +30,7 @@ export function getIntegers(nums) {
 	if (!nums) throw new Error('nums is required');
 
 	const integers = [];
-	for(let i = 0; i < nums.length; i++) {
-		if((nums[i] % 1) === 0) {
-			integers.push(nums[i]);
-		};
-	};
+	nums.forEach(num => { num % 1 === 0 ? integers.push(num) : integers});
 
 	return integers;
 };
