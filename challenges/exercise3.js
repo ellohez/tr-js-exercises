@@ -76,14 +76,11 @@ export function getLongestSides(triangles) {
 	if (!triangles) throw new Error('triangles is required');
 	
 	const longestSides = [];
-	for(let i = 0; i < triangles.length; i++) { 
-		let longest = 0;
-		for(let j = 0; j < triangles[i].length; j++) {
-			if (triangles[i][j] > longest) longest = triangles[i][j];
-		}
 
-		longestSides.push(longest);
-	};
+	triangles.forEach(triangle => { 
+		// Reduce each array of sides to the largest (longest) and store the result
+		longestSides.push(
+			triangle.reduce((x, y) => (x > y ) ? x : y)) });
 
 	return longestSides;
 };
