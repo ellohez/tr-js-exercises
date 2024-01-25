@@ -12,11 +12,7 @@ export function findNamesBeginningWith(names, char) {
 	if (!char) throw new Error('char is required');
 	
 	const foundNames = [];
-	for(let i = 0; i < names.length; i++) {
-		if(names[i][0] === char) {
-			foundNames.push(names[i]);
-		};
-	};
+	names.forEach(name => { name.startsWith(char) ? foundNames.push(name) : foundNames});
 
 	return foundNames;
 };
