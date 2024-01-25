@@ -79,7 +79,15 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
 	if (!sentences) throw new Error('sentences is required');
 	if (!str) throw new Error('str is required');
-	// Your code here!
+	
+	const resultSentences = [];
+	for(let i = 0; i < sentences.length; i++) {
+		if(sentences[i].toLowerCase().indexOf(str) !== -1) {
+			resultSentences.push(sentences[i]);
+		};
+	};
+	
+	return resultSentences;
 };
 
 export function getLongestSides(triangles) {
