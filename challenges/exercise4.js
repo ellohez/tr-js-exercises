@@ -1,12 +1,30 @@
 export const findNextNumber = (nums, n) => {
 	if (nums === undefined) throw new Error('nums is required');
 	if (n === undefined) throw new Error('n is required');
-	// Your code here!
+	
+	const foundNIndex = nums.indexOf(n);
+
+	if((foundNIndex === nums.length - 1) || (foundNIndex === -1)) {
+		// If the number is not found or is there is no next number
+		return null;
+	}
+	
+	return nums[foundNIndex + 1];
 };
 
 export const count1sand0s = (str) => {
 	if (str === undefined) throw new Error('str is required');
-	// Your code here!
+
+	const zerosAndOnes = { 
+		0: 0, 
+		1: 0,
+	};
+	for (let i = 0; i < str.length; i++) {
+		const num = str[i];
+		zerosAndOnes[num] += 1;
+	}
+
+	return zerosAndOnes;
 };
 
 export const reverseNumber = (n) => {
