@@ -59,7 +59,7 @@ export const arrShift = (arr) => {
 	const firstItem = arr[0];
 	const lastItem = arr[arr.length - 1];
 	const shiftedArr = arr;
-	
+
 	shiftedArr[0] = lastItem;
 	shiftedArr[arr.length - 1] = firstItem;
 
@@ -69,10 +69,20 @@ export const arrShift = (arr) => {
 export const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error('haystack is required');
 	if (searchTerm === undefined) throw new Error('searchTerm is required');
-	// Your code here!
+	
+	for(let property of Object.values(haystack)) {
+		if(typeof property === 'string') {
+			if(property.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1)  {
+				return true;
+			};
+		};
+	};
+
+	return false;
 };
 
 export const getWordFrequencies = (str) => {
 	if (str === undefined) throw new Error('str is required');
-	// Your code here!
+	
+
 };
