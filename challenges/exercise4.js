@@ -29,12 +29,22 @@ export const count1sand0s = (str) => {
 
 export const reverseNumber = (n) => {
 	if (n === undefined) throw new Error('n is required');
-	// Your code here!
+	
+
+	if ((n < 10) && (n >= 0)) {
+		return n;
+	}
+	// Convert the number to an array of characters
+	// reverse and convert back to an integer
+	const stringArray = n.toString().split("");
+	const reversedString = stringArray.reverse().join("");
+
+	return parseInt(reversedString);
 };
 
 export const sumArrays = (arrs) => {
 	if (arrs === undefined) throw new Error('arrs is required');
-	// Your code here!
+	
 };
 
 export const arrShift = (arr) => {
