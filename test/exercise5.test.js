@@ -47,7 +47,13 @@ describe("getComplimentaryDNA", () => {
         expect(() => {getComplementaryDNA("SDEFWPLOU")}).toThrow(Error);
     });
 
-    test("returns complimentary DNA string ACTG for input TGAC", () => {
+    test("returns complimentary DNA string", () => {
         expect(getComplementaryDNA("TGAC")).toBe("ACTG");
+        expect(getComplementaryDNA("AGTC")).toBe("TCAG");
+        expect(getComplementaryDNA("GATC")).toBe("CTAG");
     });
+
+    test("that the function is case insensitive", () => {
+        expect(getComplementaryDNA("agtc")).toBe("TCAG");
+    })
 });
