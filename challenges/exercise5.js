@@ -25,6 +25,14 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	const DNAChars = "cgta"
+	for(let letter of str) {
+		if(DNAChars.indexOf(letter.toLowerCase()) === -1) {
+			return false;
+		}
+	};
+	return true;
 };
 
 /**

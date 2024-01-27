@@ -23,6 +23,14 @@ describe("sumMultiples", () => {
     });
 });
 
-// describe("isValidDNA", () => {
-    
-// });
+describe("isValidDNA", () => {
+    // Valid DNA characters are C, G, T or A
+    test("returns true if the string only contains C, G, T or A", () => {
+        expect(isValidDNA("CTGAGTACCTGA")).toBe(true);
+    });
+    // test("returns false if the string contains no C, G, T or A", () => {
+    //     expect(isValidDNA()).toBe(false);
+    // });
+
+    // TODO: Test that the function is case insensitive
+});
