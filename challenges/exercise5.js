@@ -26,6 +26,7 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+	if(str.length === 0) throw new Error('str is required');
 
 	const DNAChars = "cgta"
 	for(let letter of str) {
@@ -45,6 +46,27 @@ export const isValidDNA = (str) => {
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
 	if (!isValidDNA(str)) throw new Error('str must be a valid DNA string');
+
+	str = str.toUpperCase();
+	let complimentaryStr = "";
+	for(let letter of str) {
+		switch(letter) {
+			case 'T': 
+				complimentaryStr += "A";
+				break;
+			case "C": 
+				complimentaryStr += "G";
+				break;
+			case 'G': 
+				complimentaryStr += "C";
+				break;
+			case "A":
+				complimentaryStr += "T";
+				break;
+		}
+	}
+
+	return complimentaryStr;
 };
 
 /**

@@ -31,6 +31,9 @@ describe("isValidDNA", () => {
     test("returns false if the string contains neither C, G, T or A", () => {
         expect(isValidDNA("SDEFWPLOU")).toBe(false);
     });
+    test("throws an error if the string is empty", () => {
+        expect(() => {isValidDNA("")}).toThrow(Error);
+    });
     test("that the function is case insensitive", () => {
         expect(isValidDNA("cgtattgac")).toBe(true);
     });
@@ -42,5 +45,9 @@ describe("isValidDNA", () => {
 describe("getComplimentaryDNA", () => {
     test("throws an error if the string is not valid DNA", () => {
         expect(() => {getComplementaryDNA("SDEFWPLOU")}).toThrow(Error);
+    });
+
+    test("returns complimentary DNA string ACTG for input TGAC", () => {
+        expect(getComplementaryDNA("TGAC")).toBe("ACTG");
     });
 });
