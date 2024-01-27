@@ -38,3 +38,9 @@ describe("isValidDNA", () => {
         expect(isValidDNA("cgtbattgac")).toBe(false);
     });
 });
+
+describe("getComplimentaryDNA", () => {
+    test("throws an error if the string is not valid DNA", () => {
+        expect(() => {getComplementaryDNA("SDEFWPLOU")}).toThrow(Error);
+    });
+});
