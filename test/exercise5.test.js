@@ -22,3 +22,7 @@ describe("sumMultiples", () => {
         expect(sumMultiples([88, 2, 4, 64, 7])).toBe(0);
     });
 });
+
+// describe("isValidDNA", () => {
+    
+// });

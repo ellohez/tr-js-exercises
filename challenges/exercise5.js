@@ -14,10 +14,7 @@ export const sumMultiples = (arr) => {
 	if (arr === undefined) throw new Error('arr is required');
 
 	const multiples = arr.map(x => ((x % 3 === 0) || (x % 5 === 0)) ? x : 0);
-	console.log('multiples :>> ', multiples);
-	console.log('arr :>> ', arr);
 	const sum = multiples.reduce((x, y) => x + y);
-	console.log('sum :>> ', sum);
 	return sum;
 };
 
