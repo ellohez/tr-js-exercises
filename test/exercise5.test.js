@@ -28,9 +28,9 @@ describe("isValidDNA", () => {
     test("returns true if the string only contains C, G, T or A", () => {
         expect(isValidDNA("CTGAGTACCTGA")).toBe(true);
     });
-    // test("returns false if the string contains no C, G, T or A", () => {
-    //     expect(isValidDNA()).toBe(false);
-    // });
+    test("returns false if the string contains neither C, G, T or A", () => {
+        expect(isValidDNA("SDEFWPLOU")).toBe(false);
+    });
 
     // TODO: Test that the function is case insensitive
 });
