@@ -57,3 +57,24 @@ describe("getComplimentaryDNA", () => {
         expect(getComplementaryDNA("agtc")).toBe("TCAG");
     })
 });
+
+describe("isItPrime", () => {
+    test('returns false if the number is 1', () => {
+        expect(isItPrime(1)).toBe(false);
+    });
+    test('returns true if the number is prime', () => {
+        expect(isItPrime(2)).toBe(true);
+        expect(isItPrime(3)).toBe(true);
+        expect(isItPrime(5)).toBe(true);
+        expect(isItPrime(13)).toBe(true);
+    });
+    test('returns false if the number is not prime', () => {
+        expect(isItPrime(4)).toBe(false);
+        expect(isItPrime(12)).toBe(false);
+        expect(isItPrime(28)).toBe(false);
+        expect(isItPrime(224)).toBe(false);
+    });
+    test('returns true for more complicated prime numbers', () => {
+        expect(isItPrime(179).toBe(true));
+    });
+});
