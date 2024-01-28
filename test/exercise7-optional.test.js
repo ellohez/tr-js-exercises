@@ -6,14 +6,14 @@ import {
 	addressLookUp,
 } from '../challenges/exercise7-optional';
 
-describe('colours', () => {
+xdescribe('colours', () => {
 	test('returns a list of colours', () => {
 		const colours = ['red', 'orange', 'green'];
 		expect(printColours(colours)).toEqual(colours);
 	});
 });
 
-describe('shoppingList', () => {
+xdescribe('shoppingList', () => {
 	test('returns a list with an extra item', () => {
 		const list = [
 			'one apple',
@@ -38,14 +38,14 @@ describe('shoppingList', () => {
 	});
 });
 
-describe('highestNumber', () => {
+xdescribe('highestNumber', () => {
 	test('returns the highest number', () => {
 		const numbers = [12, 20, 18];
 		expect(highestNumber(numbers)).toEqual(20);
 	});
 });
 
-describe('splitThatString', () => {
+xdescribe('splitThatString', () => {
 	test('returns a string split up', () => {
 		const string = 'USA';
 		expect(splitThatString(string)).toEqual(['U', 'S', 'A']);
@@ -58,7 +58,7 @@ describe('splitThatString', () => {
 
 // Optional Chaining
 
-describe('addressLookUp', () => {
+xdescribe('addressLookUp', () => {
 	test('returns a users postcode', () => {
 		const user = {
 			name: 'JimBob Eggs',

@@ -29,7 +29,7 @@ export const isValidDNA = (str) => {
 	if(str.length === 0) throw new Error('str is required');
 
 	const DNAChars = "cgta"
-	for(let letter of str) {
+	for(const letter of str) {
 		if(DNAChars.indexOf(letter.toLowerCase()) === -1) {
 			return false;
 		}
@@ -49,7 +49,7 @@ export const getComplementaryDNA = (str) => {
 
 	str = str.toUpperCase();
 	let complimentaryStr = "";
-	for(let letter of str) {
+	for(const letter of str) {
 		switch(letter) {
 			case 'T': 
 				complimentaryStr += "A";

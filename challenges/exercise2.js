@@ -27,7 +27,7 @@ export function getTotalSubjects(people) {
 	// Return the total number of subjects for all the people
 	// or zero if no subjects
 	let subjectCount = 0;
-	for(let person of people) {
+	for(const person of people) {
 		for(let i = 0; i < person.subjects.length; i++) {
 			++subjectCount;
 		};
@@ -40,7 +40,7 @@ export function checkIngredients(menu, ingredient) {
 	if (menu === undefined) throw new Error('menu is required');
 	if (!ingredient) throw new Error('ingredient is required');
 	// Return as soon as we find the ingredient listed
-	for(let item of menu) {
+	for(const item of menu) {
 		if(item.ingredients.includes(ingredient)) {
 			return true;
 		}
@@ -57,7 +57,7 @@ export function duplicateNumbers(arr1, arr2) {
 	const duplicateArr = [];
 	// Loop through and add the number to the new array if it exists in 
 	// both arrays and hasn't already been added to new array
-	for(let number of arr1) {
+	for(const number of arr1) {
 		if((arr2.includes(number)) && (!duplicateArr.includes(number))) {
 			duplicateArr.push(number);
 		}

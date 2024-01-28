@@ -70,7 +70,7 @@ export const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error('haystack is required');
 	if (searchTerm === undefined) throw new Error('searchTerm is required');
 	
-	for(let property of Object.values(haystack)) {
+	for(const property of Object.values(haystack)) {
 		if(typeof property === 'string') {
 			if(property.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1)  {
 				return true;

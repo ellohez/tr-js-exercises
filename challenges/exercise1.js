@@ -17,7 +17,7 @@ export function getBusNumbers(people) {
 export function countSheep(arr) {
 	if (arr === undefined) throw new Error('arr is required');
 	let sheepCount = 0;
-	for(let item of arr) {
+	for(const item of arr) {
 		if(item.toLowerCase() === "sheep") {
 			++sheepCount;
 		}
