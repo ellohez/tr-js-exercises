@@ -59,22 +59,52 @@ describe("getComplimentaryDNA", () => {
 });
 
 describe("isItPrime", () => {
-    test('returns false if the number is 1', () => {
+    test("returns false if the number is 1", () => {
         expect(isItPrime(1)).toBe(false);
     });
-    test('returns true if the number is prime', () => {
+    test("returns true if the number is prime", () => {
         expect(isItPrime(2)).toBe(true);
         expect(isItPrime(3)).toBe(true);
         expect(isItPrime(5)).toBe(true);
         expect(isItPrime(13)).toBe(true);
     });
-    test('returns false if the number is not prime', () => {
+    test("returns false if the number is not prime", () => {
         expect(isItPrime(4)).toBe(false);
         expect(isItPrime(12)).toBe(false);
         expect(isItPrime(28)).toBe(false);
         expect(isItPrime(224)).toBe(false);
     });
-    test('returns true for more complicated prime numbers', () => {
-        expect(isItPrime(179).toBe(true));
+    test("returns true for more complicated prime numbers", () => {
+        expect(isItPrime(179)).toBe(true);
+        expect(isItPrime(1847)).toBe(true);
+        expect(isItPrime(6113)).toBe(true);
+        expect(isItPrime(509)).toBe(true);
+    });
+});
+
+describe("createMatrix", () => {
+    test("returns a simple matrix of 2 x 2 filled with the value of the fill variable", () => {        
+        expect(createMatrix(2, "spam")).toEqual([
+            ["spam", "spam"],
+            ["spam", "spam"]
+        ]);
+
+        expect(createMatrix(2, 300)).toEqual([
+            [300, 300],
+            [300, 300],
+        ]);
+
+        expect(createMatrix(2, false)).toEqual([
+            [false, false],
+            [false, false],
+        ]);
+    });
+    test("returns an empty array if number is 0", () => {
+        expect(createMatrix(0, "empty")).toEqual([]);
+    });
+    test("larger matrices can be created", () => {
+        expect(createMatrix(600, "huge").length()).toBe(600);
+        expect(createMatrix(600, "huge")[0].length()).toBe(600);
+        expect(createMatrix(600, "huge")[600].length()).toBe(600);
     });
 });
