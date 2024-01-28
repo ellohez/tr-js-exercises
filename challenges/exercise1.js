@@ -20,8 +20,8 @@ export function countSheep(arr) {
 	for(const item of arr) {
 		if(item.toLowerCase() === "sheep") {
 			++sheepCount;
-		}
-	}
+		};
+	};
 
 	return sheepCount;
 }
@@ -31,7 +31,7 @@ export function hasMPostCode(person) {
 	// Test if 2nd character is a letter or a number.
 	const noExtraLetters = !Number.isNaN(parseInt(person.address.postCode[1]));
 	// Return true if the postcode starts with only one letter at the start === 'M'
-	let isMPostCode = ((person.address.postCode[0].toLowerCase() === 'm') && (noExtraLetters))
+	let isMPostCode = ((person.address.postCode[0].toLowerCase() === 'm') && (noExtraLetters));
 	
 	return isMPostCode;
 }
