@@ -103,8 +103,10 @@ describe("createMatrix", () => {
         expect(createMatrix(0, "empty")).toEqual([]);
     });
     test("larger matrices can be created", () => {
-        expect(createMatrix(600, "huge").length()).toBe(600);
-        expect(createMatrix(600, "huge")[0].length()).toBe(600);
-        expect(createMatrix(600, "huge")[600].length()).toBe(600);
+        const filler = "This is a huge matrix";
+        const newMatrix = createMatrix(600, filler);
+        expect(newMatrix[0][599]).toBe(filler);
+        expect(newMatrix[599][599]).toBe(filler);
+        expect(newMatrix[250][599]).toBe(filler);
     });
 });
