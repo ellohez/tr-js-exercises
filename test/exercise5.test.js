@@ -110,3 +110,27 @@ describe("createMatrix", () => {
         expect(newMatrix[250][599]).toBe(filler);
     });
 });
+
+describe("areWeCovered", () => {
+    const staff = [
+        { name: "Helen", rota: ["Monday", "Tuesday", "Wednesday"] },
+        { name: "Alex", rota: ["Monday", "Wednesday", "Friday", ] },
+        { name: "Neil", rota: ["Tuesday", "Wednesday", "Thursday"] },
+        { name: "Georgie", rota: ["Monday", "Thursday", "Friday"] },           
+    ];
+
+    test("returns true if there are 3 staff members on the rota for the given day", () => {
+        expect(areWeCovered(staff, "Monday")).toBe(true);
+        expect(areWeCovered(staff, "Wednesday")).toBe(true);
+
+    });
+    test("returns false if there are fewer than 3 staff members on the rota for the given day", () => {
+        expect(areWeCovered(staff, "Tuesday"))
+    });
+    test("returns true if there are more than 3 staff members on the rota for the given day", () => {
+        // Add another staff member to cover Wednesday
+        staff.push({ name: "Monty", rota: ["Wednesday", "Saturday"] });
+        expect(areWeCovered(staff, "Wednesday"));
+    });
+});
+
