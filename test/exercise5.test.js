@@ -42,12 +42,12 @@ describe("isValidDNA", () => {
     });
 });
 
-describe("getComplimentaryDNA", () => {
+describe("getComplementaryDNA", () => {
     test("throws an error if the string is not valid DNA", () => {
         expect(() => {getComplementaryDNA("SDEFWPLOU")}).toThrow(Error);
     });
 
-    test("returns complimentary DNA string", () => {
+    test("returns complementary DNA string", () => {
         expect(getComplementaryDNA("TGAC")).toBe("ACTG");
         expect(getComplementaryDNA("AGTC")).toBe("TCAG");
         expect(getComplementaryDNA("GATC")).toBe("CTAG");

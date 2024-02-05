@@ -48,25 +48,25 @@ export const getComplementaryDNA = (str) => {
 	if (!isValidDNA(str)) throw new Error('str must be a valid DNA string');
 
 	str = str.toUpperCase();
-	let complimentaryStr = "";
+	let complementaryStr = "";
 	for(const letter of str) {
 		switch(letter) {
 			case 'T': 
-				complimentaryStr += "A";
+				complementaryStr += "A";
 				break;
 			case "C": 
-				complimentaryStr += "G";
+				complementaryStr += "G";
 				break;
 			case 'G': 
-				complimentaryStr += "C";
+				complementaryStr += "C";
 				break;
 			case "A":
-				complimentaryStr += "T";
+				complementaryStr += "T";
 				break;
 		}
 	}
 
-	return complimentaryStr;
+	return complementaryStr;
 };
 
 /**
