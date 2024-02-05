@@ -44,10 +44,12 @@ export function getIntegers(nums) {
 export function getCities(users) {
 	if (!users) throw new Error('users is required');
 	
-	const cityArray = [];
-	users.forEach(user => { cityArray.push(user.data.city.displayName) });
+	// Refactored
+	// const cityArray = [];
+	// users.forEach(user => { cityArray.push(user.data.city.displayName) });
+	// return cityArray;
 
-	return cityArray;
+	return users.map(user => user.data.city.displayName);
 };
 
 export function getSquareRoots(nums) {
