@@ -1,29 +1,33 @@
 export function findSmallNums(nums) {
 	if (!nums) throw new Error('nums is required');
 
-	const smallNumsArr = [];
-	nums.forEach(num => { num < 1 ? smallNumsArr.push(num) : smallNumsArr});
+	// Refactored - as forEach returns undefined and the forEach ternary push is an anti-pattern
+	// const smallNumsArr = [];
+	// nums.forEach(num => { num < 1 ? smallNumsArr.push(num) : smallNumsArr});
+	// return smallNumsArr;
 
-	return smallNumsArr;
+	return nums.filter(num => num < 1);
 };
 
 export function findNamesBeginningWith(names, char) {
 	if (!names) throw new Error('names is required');
 	if (!char) throw new Error('char is required');
 	
-	const foundNames = [];
-	names.forEach(name => { name.startsWith(char) ? foundNames.push(name) : foundNames});
+	// Refactored - as forEach returns undefined and the forEach ternary push is an anti-pattern
+	// const foundNames = [];
+	// names.forEach(name => { name.startsWith(char) ? foundNames.push(name) : foundNames});
+	// return foundNames;
 
-	return foundNames;
+	return names.filter(name => name.startsWith(char));
 };
 
 export function findVerbs(words) {
 	if (!words) throw new Error('words is required');
 
-	const foundVerbs = [];
-	words.forEach(word => { word.startsWith('to ') ? foundVerbs.push(word) : foundVerbs});
+	// Refactored - as forEach returns undefined and the forEach ternary push is an anti-pattern
+	// words.forEach(word => { word.startsWith('to ') ? foundVerbs.push(word) : foundVerbs});
 
-	return foundVerbs;
+	return words.filter(word => word.startsWith('to '));
 };
 
 export function getIntegers(nums) {
