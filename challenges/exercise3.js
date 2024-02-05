@@ -64,9 +64,10 @@ export function findSentencesContaining(sentences, str) {
 	
 	const resultSentences = [];
 	// Case insensitive search for the str in the current sentence
-	sentences.forEach(sentence => { sentence.toLowerCase().indexOf(str) !== -1 ? resultSentences.push(sentence) : resultSentences})
+	// sentences.forEach(sentence => { sentence.toLowerCase().indexOf(str) !== -1 ? resultSentences.push(sentence) : resultSentences})
+	// return resultSentences;
 	
-	return resultSentences;
+	return sentences.filter(sentence => sentence.toLowerCase().indexOf(str) !== -1);
 };
 
 export function getLongestSides(triangles) {
