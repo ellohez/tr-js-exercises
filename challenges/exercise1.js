@@ -14,16 +14,20 @@ export function getBusNumbers(people) {
 	return Math.ceil(people / capacity);
 }
 
+
+// TODO: Refactored using a chaining approach - filter array and add .length
+// e.g. return arr.filter(animal -> animal.toUpperCase() === "SHEEP").length
+// Can this improvement be used elsewhere? 
 export function countSheep(arr) {
 	if (arr === undefined) throw new Error('arr is required');
-	let sheepCount = 0;
-	for(const item of arr) {
-		if(item.toLowerCase() === "sheep") {
-			++sheepCount;
-		};
-	};
+	// let sheepCount = 0;
+	// for(const item of arr) {
+	// 	if(item.toLowerCase() === "sheep") {
+	// 		++sheepCount;
+	// 	};
+	// };
 
-	return sheepCount;
+	return arr.filter(animal => animal.toUpperCase() === "SHEEP").length;
 }
 
 export function hasMPostCode(person) {
