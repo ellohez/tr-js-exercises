@@ -33,10 +33,12 @@ export function findVerbs(words) {
 export function getIntegers(nums) {
 	if (!nums) throw new Error('nums is required');
 
-	const integers = [];
-	nums.forEach(num => { num % 1 === 0 ? integers.push(num) : integers});
+	// Refactored - as forEach returns undefined and the forEach ternary push is an anti-pattern
+	// const integers = [];
+	// nums.forEach(num => { num % 1 === 0 ? integers.push(num) : integers});
+	// return integers;
 
-	return integers;
+	return nums.filter(num => num % 1 === 0);
 };
 
 export function getCities(users) {
