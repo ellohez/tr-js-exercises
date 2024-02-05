@@ -62,23 +62,12 @@ export function findSentencesContaining(sentences, str) {
 	if (!sentences) throw new Error('sentences is required');
 	if (!str) throw new Error('str is required');
 	
-	const resultSentences = [];
-	// Case insensitive search for the str in the current sentence
-	// sentences.forEach(sentence => { sentence.toLowerCase().indexOf(str) !== -1 ? resultSentences.push(sentence) : resultSentences})
-	// return resultSentences;
-	
 	return sentences.filter(sentence => sentence.toLowerCase().indexOf(str) !== -1);
 };
 
 export function getLongestSides(triangles) {
 	if (!triangles) throw new Error('triangles is required');
-	
-	const longestSides = [];
 
-	triangles.forEach(triangle => { 
-		// Reduce each array of sides to the largest (longest) and store the result
-		longestSides.push(
-			triangle.reduce((x, y) => (x > y ) ? x : y)) });
-
-	return longestSides;
+	// Reduce each set of triangle data to a single value and return
+	return triangles.map(triangle => (triangle.reduce((x, y) => (x > y ) ? x : y)));
 };
