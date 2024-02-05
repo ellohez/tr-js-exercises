@@ -54,19 +54,8 @@ export function getCities(users) {
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
-	
-	const squareRoots = [];
-	// Although this could be done as follows on one line, 
-	// for readability reasons, I have used a longer version. 
-	// nums.forEach(num => { squareRoots.push(Math.round(Math.sqrt(num) * 100) / 100) })
 
-	nums.forEach(function (num) { 
-		let square = Math.sqrt(num);
-		square = Math.round(square * 100) / 100;
-		squareRoots.push(square);
-	});
-
-	return squareRoots;
+	return nums.map(num => (Math.round(Math.sqrt(num) * 100) / 100));
 };
 
 export function findSentencesContaining(sentences, str) {
